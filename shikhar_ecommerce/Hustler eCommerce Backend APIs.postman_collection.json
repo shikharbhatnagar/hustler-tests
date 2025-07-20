@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "0285300d-6e8e-4a8b-9877-09c3c1dc5513",
+		"name": "Hustler eCommerce Backend APIs",
+		"description": "**A brief note:**\n\nThis app is to demonstrate the working APIs (GET) using the Fake\n\n**Tech stack:**\n\nNode + Express\n\n**How to setup project:**  \n`git clone https://github.com/shikharbhatnagar/hustler-tests`  \n`cd ecommerce_app`  \n`npm install`\n\n**How to run the project:**\n\n`npm run dev`\n\n**Sample Postman requests:**\n\na) Get All Products : GET [http://localhost:4000/api/v1/products](http://localhost:3000/products)\n\nb) Filter by catgory : GET [http://localhost:4000/api/v1/products?category=men's](http://localhost:4000/products?category=men's) collection\n\nc) Filter by product id : GET [http://localhost:4000/api/v1/products/1](http://localhost:3000/products/1)0\n\nd) New Product : Can be implemented but need the DB setup or Fake API permissions",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6671965"
+	},
+	"item": [
+		{
+			"name": "Products By Category",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/v1/products?category=men's clothing",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"products"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "men's clothing"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product By Id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/v1/products/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Products",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/v1/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"products"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

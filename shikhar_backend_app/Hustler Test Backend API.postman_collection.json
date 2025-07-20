@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "1aa9efda-ee36-47bb-9a56-e9247779fde5",
+		"name": "Hustler Test Backend API",
+		"description": "**A brief note:**\n\nThis app is to demonstrate the working APIs (GET and POST)\n\n**Tech stack:**\n\nNode + Express\n\n**How to setup project**\n\n`git clone`  \n`cd shikhar_backend_app`  \n`npm install`\n\n**How to run the project:**\n\n`npm run dev`\n\n**Sample Postman requests:**\n\na) Get All Products : GET [http://localhost:3000/products](http://localhost:3000/products)\n\nResponse:\n\n`[ { \"id\": 1, \"name\": \"T-shirt\", \"category\": \"Apparel\", \"price\": 19.99 }, { \"id\": 2, \"name\": \"Coffee Mug\", \"category\": \"Home\", \"price\": 7.99 }, { \"id\": 3, \"name\": \"Notebook\", \"category\": \"Stationery\", \"price\": 2.5 }]`\n\nb) Filter by catgory : GET [http://localhost:3000/products?category=Apparel](http://localhost:3000/products?category=Apparel)\n\nResponse:\n\n`[ { \"id\": 1, \"name\": \"T-shirt\", \"category\": \"Apparel\", \"price\": 19.99 }]`\n\nc) Filter by product id : GET [http://localhost:3000/products/1](http://localhost:3000/products/1)\n\n`[ { \"id\": 2, \"name\": \"Coffee Mug\", \"category\": \"Home\", \"price\": 7.99 } ]`\n\nd) New Product : POST [http://localhost:3000/products](http://localhost:3000/products)\n\nRequest Body:\n\n`{\"name\": \"Notebook\", \"category\": \"Stationery\", \"price\": 2.5}`\n\nResponse:\n\n`{ \"id\": 3, \"name\": \"Notebook\", \"category\": \"Stationery\", \"price\": 2.5}`",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6671965"
+	},
+	"item": [
+		{
+			"name": "Category Call",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/products?category=Apparel",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "Apparel"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "products call",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/products",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Single Product",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/products/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Product",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"Notebook\", \"category\": \"Stationery\", \"price\": 2.5}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://localhost:3000",
+			"type": "default"
+		}
+	]
+}
